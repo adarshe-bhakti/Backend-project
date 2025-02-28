@@ -1,0 +1,41 @@
+{
+  "data": [
+    {
+      "id": "a5f7",
+      "title": "Engagement",
+      "location": "London",
+      "eventDate": "2025-05-17T15:47",
+      "description": "Brother's Engagement party "
+    },
+    {
+      "id": "3034",
+      "title": "Naming ceremony",
+      "location": "USA",
+      "eventDate": "2025-04-30T15:47",
+      "description": "Sister's Naming  party "
+    },
+    {
+      "id": "c9e7",
+      "title": "Hotel opening ceremony",
+      "location": "Shedbal",
+      "eventDate": "2025-06-18T15:47",
+      "description": "Haripriya Hotel opening party"
+    },
+    {
+      "id": "8eb5",
+      "title": "college fest",
+      "location": "chikodi",
+      "eventDate": "2025-02-22T14:32",
+      "description": "some function "
+    }
+  ],
+  "users": [
+    {
+      "id": "f983",
+      "name": "hello",
+      "email": "hello@gmail.com",
+      "password": "hello123",
+      "confirm_password": "hello123"
+    }
+  ]
+}

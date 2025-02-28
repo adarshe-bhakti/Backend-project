@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Event</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            background: linear-gradient(135deg, #6c5ce7, #00b894);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        form {
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        input {
+            height: 45px;
+            width: 100%;
+            padding-left: 15px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #6c5ce7;
+            box-shadow: 0 0 5px rgba(108, 92, 231, 0.5);
+        }
+
+        button {
+            height: 45px;
+            width: 100%;
+            background-color: #6c5ce7;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #00b894;
+        }
+
+        .footer {
+            text-align: center;
+            color: #333;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .footer a {
+            color: #6c5ce7;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="/add-event" method="POST">
+        <h2>Add Event</h2>
+        
+        <input type="text" placeholder="Event Title" name="title" required>
+        <input type="text" placeholder="Event Location" name="location" required>
+        <input type="datetime-local" name="eventDate" required>
+        <textarea name="description" placeholder="Event Description" rows="4" required style="resize: none; padding-left: 15px; font-size: 16px; border-radius: 8px; border: 1px solid #ddd;"></textarea>
+        
+        <button type="submit">Add Event</button>
+        <p>Have an account? <a href="/login">Login here</a></p>
+    </form>
+
+
+</body>
+</html>

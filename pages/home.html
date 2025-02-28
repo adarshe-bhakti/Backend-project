@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management App</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Full-screen background */
+        .welcome {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            position: relative;
+            overflow: hidden;
+            animation: gradientMotion 5s infinite ease-in-out;
+        }
+
+        /* Content container */
+        .content {
+            text-align: center;
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* App Name */
+        .app-name {
+            font-size: 60px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            animation-delay: 0.5s;
+        }
+
+        /* Tagline below the app name */
+        .tagline {
+            font-size: 24px;
+            margin: 20px 0;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            animation-delay: 1s;
+        }
+
+        /* Start Button */
+        .start-btn {
+            padding: 15px 30px;
+            font-size: 20px;
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            animation-delay: 1.5s;
+        }
+
+        .start-btn:hover {
+            background-color: #e34e3a;
+            transform: scale(1.1);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes gradientMotion {
+            0% {
+                background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            }
+
+            50% {
+                background: linear-gradient(135deg, #6a11cb, #2575fc);
+            }
+
+            100% {
+                background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Main Welcome Section -->
+    <section class="welcome">
+        <div class="content">
+            <h1 class="app-name">EventMaster</h1>
+            <p class="tagline">Create, Manage, Celebrate</p>
+            <a href="/login"><button class="start-btn">Start</button></a>
+        </div>
+    </section>
+
+    <!-- <script>
+        // Optionally add smooth scrolling or additional interactions
+        document.querySelector('.start-btn').addEventListener('click', function () {
+            // For example, navigating to a new page or activating some feature
+            alert('Welcome to EventMaster!');
+        });
+
+    </script> -->
+</body>
+
+</html>

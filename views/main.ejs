@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            width: 100%;
+            background: linear-gradient(135deg, #6c5ce7, #00b894);
+            font-family: 'Arial', sans-serif;
+        }
+
+        header {
+            height: 10%;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #333;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 35px;
+            text-shadow: 2px 2px 5px grey;
+        }
+
+        header button {
+            height: 40px;
+            width: 150px;
+            border: none;
+            border-radius: 20px;
+            background-color: red;
+            color: white;
+            box-shadow: 2px 2px 5px grey;
+            cursor: pointer;
+        }
+
+        nav{
+            height: 10%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+        }
+
+        nav form {
+            height: 10%;
+            width: 100%;
+          
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav form {
+            height: 80%;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            background-color: black;
+            box-shadow: 2px 2px 5px grey;
+        }
+
+        nav form input {
+            height: 100%;
+            width: 90%;
+            padding-left: 20px;
+            font-size: 20px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            background-color: black;
+            outline: none;
+            border: none;
+            color: white;
+        }
+
+        nav form button {
+            height: 97%;
+            width: 10%;
+            border: none;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            background-color: blue;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main {
+            min-height: 90%;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+
+        section {
+            height: 350px;
+            width: 250px;
+            box-shadow: 2px 2px 5px grey;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+            background-color: white;
+        }
+
+        section img {
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        section h1 {
+            color: blue;
+            text-transform: uppercase;
+            font-size: 20px;
+        }
+
+        section h3 {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .event-info {
+            color: grey;
+        }
+
+        .event-description {
+            font-size: 14px;
+            color: #333;
+            text-align: left;
+            padding: 10px;
+        }
+
+        #btns {
+            height: 50px;
+            width: 90%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        #btns button {
+            height: 80%;
+            width: 40%;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            background-color: green;
+            box-shadow: 2px 2px 5px grey;
+            cursor: pointer;
+        }
+
+        #btns .del {
+            background-color: red;
+        }
+
+        #btns a {
+            color: white;
+            text-decoration: none;
+        }
+
+        #add-event{
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="/add-event"><button id="add-event">Add Event</button></a>
+        <h1>Event Details Page</h1>
+        <a href="/"><button>Log Out</button></a>
+    </header>
+
+    <nav>
+        <form action="/main" method="GET">
+            <input type="text" placeholder="Search by event..." name="search">
+            <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M309.8 276.2l-69.5 69.5c-10 10-22.3 15.6-34.5 15.6s-24.5-5.6-34.5-15.6l-69.5-69.5c-10-10-10-26.2 0-36.2l69.5-69.5c10-10 22.3-15.6 34.5-15.6s24.5 5.6 34.5 15.6l69.5 69.5c10 10 10 26.2 0 36.2z"/></svg></button>
+        </form>
+    </nav>
+
+    <main>
+        <% for(let i of data) { %>
+            <section>
+                <img src="https://www.shutterstock.com/image-vector/event-company-logo-management-design-260nw-2170203909.jpg" alt="<%= i.title %>">
+                <h1><%= i.title %></h1>
+                <h3 class="event-info">location: <%= i.location %></h3>
+                <h3 class="event-info">date: <%= i.eventDate %></h3>
+                <h3 class="event-description"><%= i.description %></h3>
+                <div id="btns">
+                    <button><a href="/edit/<%= i.id %>">edit</a></button>
+                    <button class="del"><a href="/delete/<%= i.id %>">delete </a></button>
+                    
+                   
+                </div>
+            </section>
+        <% } %>
+    </main>
+
+</body>
+</html>
